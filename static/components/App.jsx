@@ -2,7 +2,7 @@ var React = require('react');
 import {Route,NavLink,HashRouter} from "react-router-dom";
 var Chatroom = require('./Chatroom.jsx');
 var Contacts = require('./Contacts.jsx');
-var userProfile = require('./userProfile.jsx');
+var GroupChatt = require('./groupChatt.jsx')
 
 class App extends React.Component {
 	render(){
@@ -14,10 +14,10 @@ class App extends React.Component {
           	</ul>
           </div>
           <div className="App">
-            	<Route path="/profil/:user" component={userProfile}/>
             	<Route path="/:user" component={Chatroom}/>
 			</div>
 			<Contacts></Contacts>
+			<GroupChatt></GroupChatt>
 		</div>
 		</HashRouter>
 		)

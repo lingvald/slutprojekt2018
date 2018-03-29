@@ -140,7 +140,7 @@ newConversation.save(function(error, result){
 		if(error){
 			console.log('error');
 		} else {
-
+		res.send({})
 		}
 	});
 });

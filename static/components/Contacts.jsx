@@ -1,6 +1,5 @@
 var React = require('react');
 var axios = require('axios');
-var Chatroom = require('./Chatroom.jsx');
 
 class Contacts extends React.Component {
     constructor(props) {
