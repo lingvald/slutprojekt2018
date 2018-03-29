@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="Login.css">
+	<meta charset="UTF-8">
+	<link type="text/css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script src="http://use.edgefonts.net/leckerli-one:n4:all;roboto:n9,i9,n7,i7,i4,n3,i3,n5,i5,n4,n2,i2:all.js"></script>
+
+	<title>Logo One</title>
+</head>
+<body>
+	<nav id="social-nav">
+		<ul>
+			<li><i class="fa fa-facebook"></i></li>
+			<li><i class="fa fa-instagram"></i></li>
+			<li><i class="fa fa-twitter"></i></li>
+			<li><i class="fa fa-google-plus"></i></li>
+		</ul>
+	</nav>
+	<div id="front-page">
+		<h1>Välkommen!</h1>
+	<div id="logo-container">
+		<div id="logo">
+
+			<h2>Chatap</h2><i id="logo-chat" class="material-icons">chat</i>
+		</div>
+	</div>
+
+<div id="login-div"><a href="#reg-and-log-container"><span>Logga in</span></a></div>
+</div>
+	<div id="reg-and-log-container">
+		<div id="form-container">
+	<div id="image"></div>
+		<form autocomplete="off" id="login" action="/login" method="POST">
+		<h3>Logga In</h3>
+			<label>Användarnamn</label>
+			<input class="input-field" name="username" placeholder="användarnamn" type="text">
+			<label>Lösenord</label>
+			<input class="input-field" name="password" placeholder="lösenord" type="password">
+			<input class="form-btn" type="submit" value="Logga in">
+		</form>
+
+		<form autocomplete="off" id="register" method="POST" action="/register">
+		<h3>Registrera Dig</h3>
+			<label>Användarnamn</label>
+			<input class="input-field" name="username" placeholder="användarnamn" type="text">
+			<label>Lösenord</label>
+			<input class="input-field" name="password" placeholder="lösenord" type="password">
+			<input class="form-btn" type="submit" value="Registrera dig">
+		</form>
+		</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

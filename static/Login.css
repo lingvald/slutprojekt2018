@@ -1,0 +1,475 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: rgba( 255, 255, 255, 0.261 );
+}
+
+.page-container {
+	height: 100vh;
+	position: absolute;
+	z-index: -3;
+	width: 100vw;
+	background-color: #274aa9;
+	font-family: 'roboto';
+	font-weight: 100;
+}
+
+#front-page {
+			background-image: url(https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39827049561e1d87880cc750df92e2b4&auto=format&fit=crop&w=1955&q=80);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	background-attachment: fixed;
+}
+
+img {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 1000px;
+}
+
+body {
+			background-image: url(https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39827049561e1d87880cc750df92e2b4&auto=format&fit=crop&w=1955&q=80);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#logo {
+
+	box-shadow: 0px 0px 5px rgba( 22, 22, 22, 0.557 );
+	background-image: linear-gradient(-90deg, #f2f2f2, #f3f3f3);
+	padding-top: 5rem;
+	padding-left: 5rem;
+	transition: 0.3s;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+	 position: absolute;
+	display: flex;
+	flex-direction: row;
+	left: 2rem;
+	top: 2rem;
+	box-sizing: border-box;
+}
+
+#logo h2 {
+	font-family: 'roboto';
+	font-weight: lighter;
+	color: #141414;
+	font-size: 1.7rem;
+	letter-spacing: 0.3rem;
+	font-variant: small-caps;
+	border-bottom: 1px solid rgba( 18, 18, 16, 0.352 );
+}
+
+#logo h2:first-letter {
+	font-size: 4rem;
+
+}
+
+#logo:hover {
+	opacity: 0.8;
+}
+
+#reg-and-log-container {
+	background-color: rgba( 17, 17, 17, 0.661 );
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	background-attachment: fixed;
+
+}
+
+.about-front {
+	width: 40%;
+	background-color: rgba( 234, 234, 234, 0.661 );
+	font-family: 'roboto';
+	font-weight: 300;
+	padding: 2rem;
+	margin-left: 50%;
+	position: relative;
+	top: 5rem;
+			background-color: rgba(144, 144, 186, 0.7);
+	margin-bottom: 1rem;
+
+}
+
+#column-front {
+	display: flex;
+	flex-direction: row;
+}
+
+.about-front h2 {
+	font-weight: 100;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba( 15, 15, 15, 0.461 );
+	font-size: 3rem;
+}
+
+#reg-and-log-container #form-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 50%;
+	padding: 2rem;
+	margin: 0 auto;
+	position: relative;
+	top: 7rem;
+
+
+/*	box-shadow: 0px 0px 5px rgba( 20, 20, 20, 0.713 );*/
+
+}
+
+form {
+	margin: 0 auto;
+
+
+	padding: 3rem;
+}
+
+form h3 {
+	font-family: 'roboto';
+	font-weight: 100;
+	font-size: 3rem;
+
+	padding-bottom: 2rem;
+	color: rgba( 242, 242, 242, 1 );
+}
+
+form input {
+	border: none;
+	border-radius: 2px;
+	height: 2rem;
+	font-family: 'roboto';
+	font-weight: 300;
+	text-indent: 0.5rem;
+	font-size: 1.3rem;
+	margin-top: 0.6rem;
+	opacity: 0.9;
+	margin-bottom: 0.6rem;
+	transition: 0.2s;
+}
+
+.input-field:focus {
+	transform: scale(1.05);
+	opacity: 1;
+}
+
+
+.input-field::placeholder {
+	color: rgba( 30, 30, 30, 1 );
+	font-size: 1.4rem;
+	font-weight: 200;
+	transition: 0.2s;
+}
+
+.input-field:focus::placeholder {
+	font-size: 1rem;
+}
+
+
+#login {
+	border-right: 1px solid rgba( 25, 25, 25, 0.48 );
+	display: flex;
+	flex-direction: column;
+}
+
+form label {
+	font-family: 'roboto';
+	font-size: 1.2rem;
+	color: rgba( 232, 232, 232, 0.811 );
+	border-top: 1px solid rgba( 221, 221, 221, 0.161 );
+	padding-top: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+#register {
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	background-color: rgba( 237, 237, 237, 0.895 );
+	padding-left: 5rem;
+	padding: 2rem;
+	text-align: center;
+	position: relative;
+
+	font-size: 5rem;
+	font-family: 'roboto';
+	font-weight: 100;
+	top: 30rem;
+
+}
+
+#social-nav ul {
+	display: flex;
+	box-shadow: 0px 0px 4px rgba( 25, 25, 25, 0.382 );
+	flex-direction: row;
+	padding: 0.5rem;
+	list-style-type: none;
+	background-color: rgba( 229, 229, 229, 0.295 );
+
+}
+
+#social-nav ul li {
+	font-size: 2.5rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+
+#social-nav {
+	z-index: 1;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+/*#image {
+		margin-top: 10rem;
+	padding: 3rem;
+	background-image: url(https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39827049561e1d87880cc750df92e2b4&auto=format&fit=crop&w=1955&q=80);
+	background-size: cover;
+	background-position: center;
+	height: 20rem;
+	width: 20rem;
+	margin-right: 2rem;
+}*/
+
+#logo-chat {
+	font-size: 3rem;
+}
+
+.header {
+	height: 626.9px;
+
+	width: 5rem;
+	left: 39.7rem;
+	top: 0rem;
+	position: fixed;
+
+}
+
+.header ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.header ul li {
+	color: white;
+	background-color: #9AD1D4;
+	text-align: center;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	transition: 0.2s;
+}
+
+.header ul li:hover {
+	box-shadow: 0px 0px 4px black;
+	transform: scale(1.05);
+}
+
+.header ul li a {
+	text-decoration: none;
+	font-size: 2.5rem;
+	color: white;
+}
+
+.header ul li:checked {
+	background-color: black;
+}
+
+.header ul li i {
+
+	width: 80px;
+
+}
+
+
+#addContact {
+	display: none;
+}
+
+#contact-page-container {
+	position: absolute;
+	margin: 0 auto;
+	width: 90%;
+}
+
+#who-is-signed-container {
+	position: absolute;
+	left: 0;
+	font-size: 1.2rem;
+	background-color: #eaeaea;
+	top: 0;
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: row;
+}
+
+#who-is-signed-container h3 {
+	margin-right: 2rem;
+}
+.add-contact {
+	display: none;
+}
+
+.all-contacts-container {
+	position: fixed;
+	right: 0;
+	box-shadow: 0px 0px 4px rgba( 28, 28, 28, 0.486 );
+	top: 0;
+
+	height: 100vh;
+
+	background-color: #eaeaea;
+}
+
+.all-contacts-ul {
+	max-height: 90vh;
+		background-color: rgba( 38, 38, 38, 0.816 );
+
+	padding: 2rem;
+	height: auto;
+	padding-top: 0rem;
+	width: 20rem;
+	overflow-y: scroll;
+}
+
+.contacts-heading {
+	font-size: 2rem;
+	margin-top: 1rem;
+	text-align: center;
+
+	margin-bottom: 1rem;
+}
+
+.all-contacts-ul li {
+	padding-top: 0.5rem;
+	border-bottom: 0.7px solid rgba( 224, 224, 224, 0.227 );
+	padding-bottom: 0.5rem;
+	transition: 0.2s;
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	flex-direction: row;
+}
+
+.all-contacts-ul li img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 100px;
+}
+.all-contacts-ul li p {
+
+	text-align: right;
+
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.online {
+	color: #62C370;
+	font-weight: bold;
+}
+
+.offline {
+	font-weight: 100;
+	color: rgba( 255, 255, 255, 0.485 );
+}
+.all-contacts-ul li:hover {
+
+	background-color: rgba( 255, 255, 255, 0.133 );
+}
+
+.all-contacts-ul li a {
+	padding-top: 1rem;
+	text-decoration: none;
+	font-family: 'roboto';
+	margin-left: 3rem;
+	font-size: 1.4rem;
+	color: #D9DBF1;
+}
+
+#chatroom-container {
+	width: 20rem;
+	height: 40rem;
+	max-height: 40rem;
+	overflow: hidden;
+}
+
+.form-btn {
+	background-color: #eaeaea;
+	color: #f2f2f2;
+	border: 2px solid rgba(144, 144, 186, 0.9);
+	transform: scale(1);
+	font-family: 'leckerli-one';
+	font-weight: lighter;
+background-color: rgba(144, 144, 186, 0);
+
+}
+
+.form-btn:hover {
+	opacity: 0.9;
+}
+
+.form-btn:active {
+
+}
+
+.form-btn:focus {
+	transform: none;
+
+}
+
+#login-div {
+	text-align: center;
+}
+
+#login-div span {
+	color: #efefef;
+	padding: 2rem;
+	border-radius: 100px;
+/*	border: 2px solid #e5e5e5;*/
+	font-family: 'roboto';
+	font-weight: 100;
+	font-size: 4rem;
+}
+
+#login-div a {
+	color: rgba(144, 144, 186, 0.9);
+	width: 22rem;
+	border-radius: 100px;
+	margin: 0 auto;
+		display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+#login-div a:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
+}
+
+#login-div i {
+	font-size: 12rem;
+}
