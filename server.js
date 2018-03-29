@@ -39,6 +39,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get('/', function(req, res){
 });
+
 app.get('/home',isLoggedIn , function(req, res){
 	res.sendFile(path.join(__dirname + '/static/App.html'));
 
