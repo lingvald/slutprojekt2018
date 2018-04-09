@@ -11,7 +11,7 @@ class GroupChatt extends React.Component {
     }
   }
   render() {
-    return <div>
+    return <div id="groupChatt">
       <h1>{this.state.isLoggedIn.username}</h1>
       <input onChange={event => this.setState({text: event.target.value})}></input>
 
@@ -22,7 +22,6 @@ class GroupChatt extends React.Component {
           return <li key={value._id}>{value.message + ' ' + 'from' + ' ' + value.username}</li>
         })}
       </ul>
-
     </div>
   }
   componentDidMount() {
