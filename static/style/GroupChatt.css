@@ -1,5 +1,57 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
 
 #groupChatt{
-  margin: 10px;
+}
+
+#textArea{
+  background-color: #2d2d2d;
+  padding: 2%;
+	height: 300px;
+	border: 1px solid black;
+	overflow: auto;
+}
+
+#submitText {
+  background: rgba(255, 255, 255, 0.8);
+  outline: 0;
+	font-family: 'roboto';
+	font-weight: 400;
+  border: 1px solid black;
+  padding: 0 5px;
+  height: 37px;
+  width: 60%;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin: 20px 30px 40px 40px
+}
+
+#submitButton {
+  border: 1px solid #1EE494;
+  height: 37px;
+  width: 15%;
+  font-size: 14px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #FFF;
+  background-color: #222;
+}
+#contact-list-heading {
+  font-size: 3rem;
+  padding: 1rem;
+  background-color: silver;
+  font-weight: 100;
+  margin-top: 40px;
+}
+#groupChattMessage{
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  color: white;
+  background-color: rgba(154, 209, 212, 0.5);
+  font-size: 1.2rem
+}
+li{
+  margin-bottom: 15px;
+  margin-left: 20px;
+  color: silver;
 }
