@@ -11,19 +11,21 @@ class GroupChatt extends React.Component {
       imgUrl: ''
     }
   }
+  //this.state.isLoggedIn.username
   render() {
     return <div id="groupChatt">
-      <h1>{this.state.isLoggedIn.username}</h1>
-      <input className={"img"} onChange={event => {this.setState({imgUrl: event.target.value})} }></input>
-      <input onChange={event => {this.setState({ text: event.target.value})} }></input>
+      <h2 id="contact-list-heading" >Group Chatt</h2>
+      <div id="textArea">
+        <ul>
+          {this.state.chats.map(function (value) {
+            return <li id="" key={value._id}><span id="groupChattMessage">{value.message}</span>{ ' ' + '-' + ' ' + value.username}</li>
+          })}
+        </ul>
+      </div>
+        <input id="submitText" onChange={event => this.setState({text: event.target.value})}></input>
 
-      <button onClick={() => this.submitMessage()}>Submit</button>
+        <button id="submitButton" onClick={() => this.submitMessage()}>Submit</button>
 
-      <ul>
-        {this.state.chats.map(function (value) {
-          return <li key={value._id}>{value.message + ' ' }<img src={value.imgUrl}></img>{'from' + ' ' + value.username}</li>
-        })}
-      </ul>
     </div>
   }
   componentDidMount() {
