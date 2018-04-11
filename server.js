@@ -129,10 +129,13 @@ app.post('/conversations', function(req, res){
 	var opponent = req.body.opponent;
 	var message = req.body.message;
 	var user_id = req.body.user_id;
+	var imgUrl = req.body.imgUrl;
+	console.log(req.body);
 	var newConversation = new Conversation ({
 		username: username,
 		message: message,
 		user_id: user_id,
+		imgUrl: imgUrl,
 		opponent: opponent
 	});
 
