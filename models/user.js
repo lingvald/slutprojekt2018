@@ -7,6 +7,7 @@ var UserSchema = new mongoose.Schema({
 	bio: String,
 	age: Number,
 	image: String,
+    sex: String,
 	city: String
 });
 

@@ -12,7 +12,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['env']
+			compact: false,
+          	presets: ['env']
         }
       },
       {
@@ -33,7 +34,6 @@ module.exports = {
         loader: 'eslint-loader',
         test: /\.jsx$/
       },
-
     ]
   },
 };

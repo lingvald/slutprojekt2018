@@ -473,3 +473,22 @@ background-color: rgba(144, 144, 186, 0);
 #login-div i {
 	font-size: 12rem;
 }
+
+#already-logged-in {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: rgba( 242, 242, 242, 0.578 );
+	margin: 0 auto;
+	border-radius: 10px;
+	width: 15rem;
+}
+
+#already-logged-in a {
+	text-align: center;
+	color: #1e1e1e;
+	font-family: 'roboto';
+	font-weight: 300;
+	font-size: 1.4rem;
+	text-decoration: none;
+}

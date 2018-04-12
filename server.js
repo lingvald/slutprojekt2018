@@ -1,4 +1,5 @@
-var express 				= require('express'),
+const
+	express 				= require('express'),
 	mongoose 				= require('mongoose'),
 	passport 				= require('passport'),
 	bodyParser 				= require('body-parser'),
@@ -6,16 +7,13 @@ var express 				= require('express'),
 	Conversation			= require('./models/conversation'),
 	LocalStrategy 			= require('passport-local'),
 	passportLocalMongoose 	= require('passport-local-mongoose'),
-	path					= require('path');
+	path					= require('path'),
+	app						= express();
 
+app.use(express.static(__dirname + '/node_modules'));
 mongoose.connect("mongodb://localhost/chatt_auth");
-
-var app = express();
-
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.use(express.static(path.join(path.resolve(), 'static')));
-
 app.use(bodyParser.json());
 
 app.use(require('express-session')({
@@ -23,8 +21,6 @@ app.use(require('express-session')({
 	resave: false,
 	saveUninitialized: false
 }));
-
-app.set('view engine', 'html');
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,7 +33,8 @@ passport.deserializeUser(User.deserializeUser());
 // ROUTES
 // ===========
 
-app.get('/', function(req, res){
+app.get('/',  function(req, res){
+	res.sendFile(path.join(__dirname + '/static/index.html'));
 });
 
 app.get('/home',isLoggedIn , function(req, res){
@@ -64,7 +61,10 @@ app.post('/register', function(req, res){
 });
 
 app.get('/api/users', function(req, res){
-	User.find({}, function(error, result){
+	var currentUser = req.user.username;
+
+	User.find({username: {$ne: currentUser}}, function(error, result){
+
 		if(error){
 			console.log(error);
 		} else {
@@ -75,7 +75,7 @@ app.get('/api/users', function(req, res){
 });
 
 app.get('/api/users/:opponent', function(req, res){
-	var opponent = req.params.opponent;
+	const opponent = req.params.opponent;
 	User.find({username: opponent}, function(error, result){
 		if(error){
 			console.log(error);
@@ -94,15 +94,16 @@ app.post('/login', passport.authenticate('local', {
 });
 
 app.post('/userinfo', function(req, res){
-
-	var identifier = req.body.identifier;
-	var bio = req.body.userbio;
-	var city = req.body.city;
-	var age = req.body.age;
-	var image = req.body.image;
+    console.log(req.user);
+	const identifier = req.user.username;
+	const bio = req.body.bio;
+	const city = req.body.city;
+    const sex = req.body.sex;
+	const age = req.body.age;
+	const image = req.body.image;
 	console.log(identifier);
 
-	User.findOneAndUpdate({username: identifier}, {$set: {bio: bio, city: city, age: age, image: image}}, {upsert:true}, function(err, raw) {
+	User.findOneAndUpdate({username: identifier}, {$set: {bio: bio, city: city, age: age, sex: sex, image: image}}, {upsert:true}, function(err, raw) {
     if (err) {
       res.send(err);
     }
@@ -125,16 +126,15 @@ function isLoggedIn(req, res, next){
 // CHATROOM ROUTES
 
 app.post('/conversations', function(req, res){
-	var username = req.body.username;
-	var opponent = req.body.opponent;
-	var message = req.body.message;
-	var user_id = req.body.user_id;
-	var imgUrl = req.body.imgUrl;
-	var newConversation = new Conversation ({
+	const username = req.user.username;
+	const opponent = req.body.opponent;
+	const message = req.body.message;
+	const user_id = req.body.user_id;
+
+	const newConversation = new Conversation ({
 		username: username,
 		message: message,
 		user_id: user_id,
-		imgUrl: imgUrl,
 		opponent: opponent
 	});
 
@@ -142,14 +142,15 @@ newConversation.save(function(error, result){
 		if(error){
 			console.log('error');
 		} else {
-		res.send({})
+
 		}
 	});
 });
 
 app.get('/api/conversations/:opponent', function(req, res){
-	var opponent = req.params.opponent;
-	var username = req.user.username;
+	const opponent = req.params.opponent;
+	const username = req.user.username;
+
 	Conversation.find({
         $and : [
             { $or : [ { username: username }, { username : opponent } ] },
@@ -164,5 +165,5 @@ app.get('/api/conversations/:opponent', function(req, res){
 });
 
 app.listen(3000, function(){
-	console.log('Server is running');
+	console.log('server is running on port 3000');
 });

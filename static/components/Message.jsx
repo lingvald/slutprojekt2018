@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 
 var Message = ({chat, user}) => (
     <li className={`chat ${user === chat.opponent ? "right" : "left"}`}>
@@ -7,4 +7,4 @@ var Message = ({chat, user}) => (
     </li>
 );
 
-module.exports = Message;
+export default Message;

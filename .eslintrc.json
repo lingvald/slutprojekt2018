@@ -9,6 +9,11 @@
     "plugin:react/recommended"
   ],
   "rules": {
-    "no-console": "off"
-  }
+    "no-console": "off",
+	"react/prop-types": "ignore",
+	"parser": "babel-eslint"
+  },
+  "parserOptions": {
+	"sourceType": "module"
+}
 }
