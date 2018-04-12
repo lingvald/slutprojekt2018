@@ -130,7 +130,6 @@ app.post('/conversations', function(req, res){
 	var message = req.body.message;
 	var user_id = req.body.user_id;
 	var imgUrl = req.body.imgUrl;
-	console.log(req.body);
 	var newConversation = new Conversation ({
 		username: username,
 		message: message,
