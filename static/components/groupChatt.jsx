@@ -43,10 +43,10 @@ class GroupChatt extends React.Component {
       this.setState({isLoggedIn: isLoggedInName});
     });
 
-    axios.get('/api/conversations/' + 'toAll')
+    axios.get('api/allconversations')
 		.then(result => {
+      console.log(result)
 			var chat = result.data;
-      console.log(chat);
 			this.setState({chats: chat});
 		});
     //scrollar längst ner i gruppchatten när sidan laddas in
