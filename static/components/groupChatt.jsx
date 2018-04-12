@@ -18,7 +18,7 @@ class GroupChatt extends React.Component {
       <div id="textArea">
         <ul>
           {this.state.chats.map(function (value) {
-            return <li id="" key={value._id}><span id="groupChattMessage">{value.message}<img src={value.imgUrl}></img></span>{ ' ' + '-' + ' ' + value.username}</li>
+            return <li id="" key={value._id}><div id="groupChattMessage"><img src={value.imgUrl}></img>{' ' + value.message}</div>{ ' ' + '-' + ' ' + value.username}</li>
           })}
         </ul>
       </div>
@@ -31,7 +31,7 @@ class GroupChatt extends React.Component {
               <input id="submitImg" onChange={event => this.setState({imgUrl: event.target.value})}></input>
             </span>
           </div>
-          <img id="imgIcon" src="https://i0.wp.com/www.freeiconspng.com/uploads/no-image-icon-13.png?resize=601%2C476" onClick={() => document.getElementById("popupContent").classList.toggle("show")}></img>
+          <div id="imgIcon" onClick={() => document.getElementById("popupContent").classList.toggle("show")}><i className="fa fa-image"></i></div>
         </div>
         <button id="submitButton" onClick={() => this.submitMessage()}>Submit</button>
       </div>

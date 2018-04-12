@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Chatroom from './Chatroom.jsx';
+import GroupChatt from './groupChatt.jsx';
 
 // Making the App component
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
 		return (
         <div className="App">
 			<Chatroom />
+			<GroupChatt />
 		</div>
 		)
 	}
