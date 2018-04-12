@@ -27,7 +27,7 @@ class GroupChatt extends React.Component {
         <div id="test">
           <div className="popupContainer">
             <span className="popupContent" id="popupContent">
-              <p>Skicka en bild!</p>
+              <span>Skicka en bild!</span>
               <input id="submitImg" onChange={event => this.setState({imgUrl: event.target.value})}></input>
             </span>
           </div>
@@ -53,7 +53,7 @@ class GroupChatt extends React.Component {
     setTimeout(() => {
       var bottom = document.getElementById('textArea').scrollHeight - document.getElementById('textArea').scrollTop;
       document.getElementById('textArea').scrollBy(0, bottom)
-    }, 1500)
+    }, 2000)
   }
   submitMessage() {
     axios.post('/conversations', {
