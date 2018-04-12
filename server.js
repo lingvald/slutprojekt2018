@@ -147,6 +147,15 @@ newConversation.save(function(error, result){
 	});
 });
 
+app.get('/api/allconversations', function(req, res){
+
+		Conversation.find({'opponent': 'toAll'}, function(error, result){
+if(error){
+console.log(error);
+}
+res.send(result);
+});
+})
 app.get('/api/conversations/:opponent', function(req, res){
 	const opponent = req.params.opponent;
 	const username = req.user.username;
