@@ -451,12 +451,8 @@ p {
 }
 
 .chatroom .chats .chat img {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	position: absolute;
-	top: -10px;
-	left: 0px;
+	max-width: 200px;
+	max-height: 200px;
 }
 
 .chatroom .chats .chat.right {

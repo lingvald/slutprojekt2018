@@ -88,7 +88,7 @@ class Chat extends Component {
 
                         this.state.chats.map(chat =>
 						<li key={chat._id} className={`chat ${username === chat.opponent ? "left" : "right"}`}>
-              <img src={chat.imgUrl}></img>
+              <img className="messages" src={chat.imgUrl}></img>
 						<p className="messages">{chat.message}</p>
                        </li>
                         )
