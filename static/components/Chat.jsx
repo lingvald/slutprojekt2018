@@ -5,13 +5,12 @@ class Chat extends Component {
     constructor(props) {
         super(props);
         this.state = {
-			showImageSelector: true,
             chats: [],
+            imgUrl: '',
 			isLoggedIn: '',
 			opponent: '',
         };
         this.submitMessage = this.submitMessage.bind(this);
-		this.showImageSelectorToggle = this.showImageSelectorToggle.bind(this);
     }
 
 	whoIsLoggedIn(){
@@ -54,6 +53,7 @@ class Chat extends Component {
 				username: this.state.isLoggedIn.username,
 				user_id: this.state.isLoggedIn._id,
 				message: message,
+        imgUrl: this.state.imgUrl,
 				opponent: this.state.opponent.username
 			})
 				.then(function (response) {
@@ -77,10 +77,6 @@ class Chat extends Component {
 		}
     }
 
-	showImageSelectorToggle() {
-		const { showImageSelector } = this.state;
-		this.setState({showImageSelector:!showImageSelector});
-	}
 
     render() {
 		const username = this.state.isLoggedIn.username;
@@ -92,34 +88,29 @@ class Chat extends Component {
 
                         this.state.chats.map(chat =>
 						<li key={chat._id} className={`chat ${username === chat.opponent ? "left" : "right"}`}>
+              <img src={chat.imgUrl}></img>
 						<p className="messages">{chat.message}</p>
                        </li>
                         )
 
                     }
                 </ul>
-				{ this.state.showImageSelector && <Image />}
                 <form className="input" onSubmit={(e) => this.submitMessage(e)}>
 					<input type="text" ref={(input) => { this.msg = input; }} />
-					<div onClick={this.showImageSelectorToggle} id="message-image"><i className="fa fa-image"></i></div>
+            <div id="test2">
+              <div className="popupContainer">
+                <span className="popupContent" id="popupContentChatt">
+                  <span>Skicka en bild!</span>
+                  <input id="submitImg" placeholder="Bildadress, Url" onChange={event => this.setState({imgUrl: event.target.value})}></input>
+                </span>
+              </div>
+					<div onClick={() => document.getElementById("popupContentChatt").classList.toggle("show")} id="message-image"><i className="fa fa-image"></i></div>
+          </div>
                     <input type="submit" value="skicka" />
                 </form>
             </div>
         );
     }
-}
-
-class Image extends Component {
-	render() {
-		return (
-			<div id="image-message-container">
-				<div style={{backgroundImage: 'url(https://media.istockphoto.com/photos/grey-squirrel-yawning-picture-id473012660?k=6&m=473012660&s=612x612&w=0&h=opzkOsCuudeI_l83My-WdfTiru2mpuwZMpVomymwC9c=)'}}></div>
-				<div style={{backgroundImage: 'url(https://media.istockphoto.com/photos/grey-squirrel-yawning-picture-id473012660?k=6&m=473012660&s=612x612&w=0&h=opzkOsCuudeI_l83My-WdfTiru2mpuwZMpVomymwC9c=)'}}></div>
-				<div style={{backgroundImage: 'url(https://media.istockphoto.com/photos/grey-squirrel-yawning-picture-id473012660?k=6&m=473012660&s=612x612&w=0&h=opzkOsCuudeI_l83My-WdfTiru2mpuwZMpVomymwC9c=)'}}></div>
-
-			</div>
-			)
-	}
 }
 
 export default Chat;

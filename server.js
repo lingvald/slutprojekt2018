@@ -130,12 +130,14 @@ app.post('/conversations', function(req, res){
 	const opponent = req.body.opponent;
 	const message = req.body.message;
 	const user_id = req.body.user_id;
+	const imgUrl = req.body.imgUrl;
 
 	const newConversation = new Conversation ({
 		username: username,
 		message: message,
 		user_id: user_id,
-		opponent: opponent
+		opponent: opponent,
+		imgUrl: imgUrl
 	});
 
 newConversation.save(function(error, result){

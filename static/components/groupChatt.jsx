@@ -28,7 +28,7 @@ class GroupChatt extends React.Component {
           <div className="popupContainer">
             <span className="popupContent" id="popupContent">
               <span>Skicka en bild!</span>
-              <input id="submitImg" onChange={event => this.setState({imgUrl: event.target.value})}></input>
+              <input id="submitImg" placeholder="Bildadress, Url" onChange={event => this.setState({imgUrl: event.target.value})}></input>
             </span>
           </div>
           <div id="imgIcon" onClick={() => document.getElementById("popupContent").classList.toggle("show")}><i className="fa fa-image"></i></div>
