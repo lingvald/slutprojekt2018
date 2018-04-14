@@ -37,9 +37,6 @@ class GroupChatt extends React.Component {
       </div>
     </div>
   }
-  scrollToBotom(){
-    () => {document.getElementById('textArea').scrollTop = document.getElementById('textArea').scrollHeight;};
-   }
   componentDidMount() {
     axios.get('/home/isloggedin').then(result => {
       var isLoggedInName = result.data;
@@ -51,9 +48,13 @@ setInterval(function(){
       console.log(result)
 			var chat = result.data;
 			this.setState({chats: chat});
-		});}.bind(this))
-    //scrollar längst ner i gruppchatten när sidan laddas in
-    setTimeout(this.scrollToBotom(), 10000);
+		});}.bind(this), 1000)
+    setTimeout(
+    function scrollbot() {
+      var bot = document.getElementById('textArea').scrollHeight - document.getElementById('textArea').scrollTop;
+      document.getElementById('textArea').scrollBy(0,bot)
+    }, 2000);
+
   }
   submitMessage() {
     axios.post('/conversations', {
@@ -69,7 +70,12 @@ setInterval(function(){
 				.catch(function (error) {
 				console.log(error);
 			});
-      this.scrollToBotom();
+      setTimeout(
+      function scrollbot() {
+        var bot = document.getElementById('textArea').scrollHeight - document.getElementById('textArea').scrollTop;
+        document.getElementById('textArea').scrollBy(0,bot)
+      }, 1000);
+
   }
 }
 
