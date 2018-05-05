@@ -61,26 +61,27 @@ app.post('/register', function(req, res){
 });
 
 app.get('/api/users', function(req, res){
-	var currentUser = req.user.username;
-
+	const currentUser = req.user.username;
 	User.find({username: {$ne: currentUser}}, function(error, result){
-
 		if(error){
 			console.log(error);
-		} else {
-
 		}
 		res.send(result);
 	});
 });
+
+app.delete('/delete/user/:id', function(req, res){
+	const id = req.params.id;
+	User.findByIdAndRemove({_id: id}).then(function(User){
+		res.send(User);
+	})
+})
 
 app.get('/api/users/:opponent', function(req, res){
 	const opponent = req.params.opponent;
 	User.find({username: opponent}, function(error, result){
 		if(error){
 			console.log(error);
-		} else {
-
 		}
 		res.send(result);
 	});
